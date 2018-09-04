@@ -4,8 +4,18 @@
 
 #include "Graph.h"
 
+Graph::Graph() {}
+
 Graph::Graph(int nVertices) {
+    this->setNumberOfVertices(nVertices);
+    this->instantiatePAdjacencyList(nVertices);
+}
+
+void Graph::setNumberOfVertices(int nVertices) {
     this->numberOfVertices = nVertices;
+}
+
+void Graph::instantiatePAdjacencyList(int nVertices) {
     pAdjacencyList = new list<int>[nVertices];
 }
 

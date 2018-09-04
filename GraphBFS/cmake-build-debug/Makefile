@@ -177,6 +177,33 @@ utils/Graph.cpp.s:
 	$(MAKE) -f CMakeFiles/GraphBFS.dir/build.make CMakeFiles/GraphBFS.dir/utils/Graph.cpp.s
 .PHONY : utils/Graph.cpp.s
 
+utils/GraphFileProcess.o: utils/GraphFileProcess.cpp.o
+
+.PHONY : utils/GraphFileProcess.o
+
+# target to build an object file
+utils/GraphFileProcess.cpp.o:
+	$(MAKE) -f CMakeFiles/GraphBFS.dir/build.make CMakeFiles/GraphBFS.dir/utils/GraphFileProcess.cpp.o
+.PHONY : utils/GraphFileProcess.cpp.o
+
+utils/GraphFileProcess.i: utils/GraphFileProcess.cpp.i
+
+.PHONY : utils/GraphFileProcess.i
+
+# target to preprocess a source file
+utils/GraphFileProcess.cpp.i:
+	$(MAKE) -f CMakeFiles/GraphBFS.dir/build.make CMakeFiles/GraphBFS.dir/utils/GraphFileProcess.cpp.i
+.PHONY : utils/GraphFileProcess.cpp.i
+
+utils/GraphFileProcess.s: utils/GraphFileProcess.cpp.s
+
+.PHONY : utils/GraphFileProcess.s
+
+# target to generate assembly for a file
+utils/GraphFileProcess.cpp.s:
+	$(MAKE) -f CMakeFiles/GraphBFS.dir/build.make CMakeFiles/GraphBFS.dir/utils/GraphFileProcess.cpp.s
+.PHONY : utils/GraphFileProcess.cpp.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -192,6 +219,9 @@ help:
 	@echo "... utils/Graph.o"
 	@echo "... utils/Graph.i"
 	@echo "... utils/Graph.s"
+	@echo "... utils/GraphFileProcess.o"
+	@echo "... utils/GraphFileProcess.i"
+	@echo "... utils/GraphFileProcess.s"
 .PHONY : help
 
 

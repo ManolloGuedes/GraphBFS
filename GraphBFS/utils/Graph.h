@@ -18,8 +18,15 @@ class Graph {
     list<int> *pAdjacencyList;
 
 public:
+
+    Graph();
     //Constructor of graph
     Graph(int nVertices);
+
+    //setter de numberOfVertices
+    void setNumberOfVertices(int nVertices);
+
+    void instantiatePAdjacencyList(int nVertices);
 
     //Insert an edge between two vertices
     void addEdge(int from, int to);

@@ -93,6 +93,12 @@
 		<Unit filename="/home/manollo-guedes/CLionProjects/GraphBFS/GraphBFS/utils/Graph.h">
 			<Option target="GraphBFS"/>
 		</Unit>
+		<Unit filename="/home/manollo-guedes/CLionProjects/GraphBFS/GraphBFS/utils/GraphFileProcess.cpp">
+			<Option target="GraphBFS"/>
+		</Unit>
+		<Unit filename="/home/manollo-guedes/CLionProjects/GraphBFS/GraphBFS/utils/GraphFileProcess.h">
+			<Option target="GraphBFS"/>
+		</Unit>
 		<Unit filename="/home/manollo-guedes/CLionProjects/GraphBFS/GraphBFS/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
