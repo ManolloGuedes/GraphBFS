@@ -1,3 +1,0 @@
-/home/manollo-guedes/CLionProjects/GraphBFS/GraphBFS/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/home/manollo-guedes/CLionProjects/GraphBFS/GraphBFS/cmake-build-debug/CMakeFiles/edit_cache.dir
-/home/manollo-guedes/CLionProjects/GraphBFS/GraphBFS/cmake-build-debug/CMakeFiles/GraphBFS.dir

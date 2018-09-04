@@ -1,1 +1,0 @@
-/usr/bin/c++  -g   CMakeFiles/GraphBFS.dir/main.cpp.o CMakeFiles/GraphBFS.dir/utils/Graph.cpp.o  -o GraphBFS 
