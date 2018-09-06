@@ -177,32 +177,32 @@ utils/Graph.cpp.s:
 	$(MAKE) -f CMakeFiles/GraphBFS.dir/build.make CMakeFiles/GraphBFS.dir/utils/Graph.cpp.s
 .PHONY : utils/Graph.cpp.s
 
-utils/GraphFileProcess.o: utils/GraphFileProcess.cpp.o
+utils/Node.o: utils/Node.cpp.o
 
-.PHONY : utils/GraphFileProcess.o
+.PHONY : utils/Node.o
 
 # target to build an object file
-utils/GraphFileProcess.cpp.o:
-	$(MAKE) -f CMakeFiles/GraphBFS.dir/build.make CMakeFiles/GraphBFS.dir/utils/GraphFileProcess.cpp.o
-.PHONY : utils/GraphFileProcess.cpp.o
+utils/Node.cpp.o:
+	$(MAKE) -f CMakeFiles/GraphBFS.dir/build.make CMakeFiles/GraphBFS.dir/utils/Node.cpp.o
+.PHONY : utils/Node.cpp.o
 
-utils/GraphFileProcess.i: utils/GraphFileProcess.cpp.i
+utils/Node.i: utils/Node.cpp.i
 
-.PHONY : utils/GraphFileProcess.i
+.PHONY : utils/Node.i
 
 # target to preprocess a source file
-utils/GraphFileProcess.cpp.i:
-	$(MAKE) -f CMakeFiles/GraphBFS.dir/build.make CMakeFiles/GraphBFS.dir/utils/GraphFileProcess.cpp.i
-.PHONY : utils/GraphFileProcess.cpp.i
+utils/Node.cpp.i:
+	$(MAKE) -f CMakeFiles/GraphBFS.dir/build.make CMakeFiles/GraphBFS.dir/utils/Node.cpp.i
+.PHONY : utils/Node.cpp.i
 
-utils/GraphFileProcess.s: utils/GraphFileProcess.cpp.s
+utils/Node.s: utils/Node.cpp.s
 
-.PHONY : utils/GraphFileProcess.s
+.PHONY : utils/Node.s
 
 # target to generate assembly for a file
-utils/GraphFileProcess.cpp.s:
-	$(MAKE) -f CMakeFiles/GraphBFS.dir/build.make CMakeFiles/GraphBFS.dir/utils/GraphFileProcess.cpp.s
-.PHONY : utils/GraphFileProcess.cpp.s
+utils/Node.cpp.s:
+	$(MAKE) -f CMakeFiles/GraphBFS.dir/build.make CMakeFiles/GraphBFS.dir/utils/Node.cpp.s
+.PHONY : utils/Node.cpp.s
 
 # Help Target
 help:
@@ -219,9 +219,9 @@ help:
 	@echo "... utils/Graph.o"
 	@echo "... utils/Graph.i"
 	@echo "... utils/Graph.s"
-	@echo "... utils/GraphFileProcess.o"
-	@echo "... utils/GraphFileProcess.i"
-	@echo "... utils/GraphFileProcess.s"
+	@echo "... utils/Node.o"
+	@echo "... utils/Node.i"
+	@echo "... utils/Node.s"
 .PHONY : help
 
 

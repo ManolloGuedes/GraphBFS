@@ -93,10 +93,10 @@
 		<Unit filename="/home/manollo-guedes/CLionProjects/GraphBFS/GraphBFS/utils/Graph.h">
 			<Option target="GraphBFS"/>
 		</Unit>
-		<Unit filename="/home/manollo-guedes/CLionProjects/GraphBFS/GraphBFS/utils/GraphFileProcess.cpp">
+		<Unit filename="/home/manollo-guedes/CLionProjects/GraphBFS/GraphBFS/utils/Node.cpp">
 			<Option target="GraphBFS"/>
 		</Unit>
-		<Unit filename="/home/manollo-guedes/CLionProjects/GraphBFS/GraphBFS/utils/GraphFileProcess.h">
+		<Unit filename="/home/manollo-guedes/CLionProjects/GraphBFS/GraphBFS/utils/Node.h">
 			<Option target="GraphBFS"/>
 		</Unit>
 		<Unit filename="/home/manollo-guedes/CLionProjects/GraphBFS/GraphBFS/CMakeLists.txt">

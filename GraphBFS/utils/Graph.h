@@ -7,32 +7,23 @@
 
 #include <iostream>
 #include <list>
+#include "Node.h"
 
 using namespace std;
 
 class Graph {
-    //No. of vertices
-    int numberOfVertices;
-
-    //Pointer to adjacency list
-    list<int> *pAdjacencyList;
-
+    vector< Node* > node;
 public:
 
-    Graph();
-    //Constructor of graph
-    Graph(int nVertices);
+    Graph(int size);
 
-    //setter de numberOfVertices
-    void setNumberOfVertices(int nVertices);
+    void add_edge(int nodeA,int nodeB);
 
-    void instantiatePAdjacencyList(int nVertices);
+    void BFS(int source);
 
-    //Insert an edge between two vertices
-    void addEdge(int from, int to);
+    static bool nodeCompare(Node* nodeA, Node* nodeB);
 
-    //
-    void BFSCalculate(int source);
+    void deallocateMemory();
 };
 
 

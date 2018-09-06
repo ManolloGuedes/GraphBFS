@@ -1,30 +1,38 @@
-#include <iostream>
+# include <iostream>
+# include <algorithm>
+#include <fstream>
 #include "utils/Graph.h"
-#include "utils/GraphFileProcess.h"
 
 using namespace std;
 
+
 int main() {
-/*  Graph g(4);
-    g.addEdge(0, 1);
-    g.addEdge(0, 2);
-    g.addEdge(1, 2);
-    g.addEdge(2, 0);
-    g.addEdge(2, 3);
-    g.addEdge(3, 3);
+    ifstream stream;
+    stream.open("/home/manollo-guedes/Documentos/Mestrado/PAA/1138_bus.mtx", std::ifstream::in);
 
-    cout << "Following is Breadth First Traversal "
-         << "(starting from vertex 2) \n";
-    g.BFSCalculate(2);
-*/
-    GraphFileProcess gfprocess("1138_bus.mtx");
-    gfprocess.skipLinesWithInit('%');
+    while (stream.peek() == '%'){
+        stream.ignore(numeric_limits<streamsize>::max(), '\n');
+    }
 
-    Graph graph;
 
-    gfprocess.initializeGraph(graph);
+    int dimensionA, dimensionB, value;
+    stream >> dimensionA >> dimensionB >> value;
 
-    graph.BFSCalculate(1056);
+    Graph g(dimensionA);
 
-    return 0;
+    int nodeA, nodeB;
+    float weight;
+
+    while (!stream.eof()) {
+        stream >> nodeA >> nodeB >> weight;
+
+        g.add_edge(nodeA, nodeB);
+    }
+
+    stream.close();
+
+    g.deallocateMemory();
+
+    g.BFS(2);
 }
+

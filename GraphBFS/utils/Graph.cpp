@@ -3,61 +3,74 @@
 //
 
 #include "Graph.h"
+#include <algorithm>
 
-Graph::Graph() {}
-
-Graph::Graph(int nVertices) {
-    this->setNumberOfVertices(nVertices);
-    this->instantiatePAdjacencyList(nVertices);
+Graph::Graph(int size) {
+    node.resize(size + 1);
 }
 
-void Graph::setNumberOfVertices(int nVertices) {
-    this->numberOfVertices = nVertices;
-}
-
-void Graph::instantiatePAdjacencyList(int nVertices) {
-    pAdjacencyList = new list<int>[nVertices];
-}
-
-//Insert an edge between two vertices
-void Graph::addEdge(int from, int to) {
-    //Add an reference to 'to' vertice on 'from' adjacency list
-    pAdjacencyList[from].push_back(to);
-}
-
-//
-void Graph::BFSCalculate(int source) {
-    // Mark all the vertices as not visited
-    bool *visited = new bool[this->numberOfVertices];
-    for(int i = 0; i < this->numberOfVertices; i++) {
-        visited[i] = false;
+void Graph::add_edge(int nodeA,int nodeB) {
+    Node* node;
+    if(this->node[nodeB] == NULL) {
+        node = new Node();
+        node->initializateNode(nodeB);
+        this->node[nodeB] = node;
+    } else {
+        node = this->node[nodeB];
     }
 
-    // Create a queue for BFS
-    list<int> queue;
+    if(this->node[nodeA] == NULL) {
+        this->node[nodeA] = new Node();
+        this->node[nodeA]->initializateNode(nodeA);
+    }
+    this->node[nodeA]->addAdjacency(node);
+}
 
-    // Mark the current node as visited and enqueue it
-    visited[source] = true;
-    queue.push_back(source);
+void Graph::BFS(int source) {
 
-    // 'i' will be used to get all adjacent
-    // vertices of a vertex
-    list<int>::iterator i;
+    //walk on visited vector and initialize it with false
+
+    list<Node*> queue;
+
+    Node* nodeSource = this->node[source];
+    nodeSource->setVisited(true);
+    nodeSource->setDistance(0);
+    nodeSource->setPredecessor(NULL);
+    nodeSource->setOrder(1);
+
+    list<Node*> listNode;
+    listNode.push_back(nodeSource);
+
+    queue.push_back(nodeSource);
 
     while(!queue.empty()) {
-        // Dequeue a vertex from queue and print it
-        source = queue.front();
-        cout << source << " ";
+        nodeSource = queue.front();
         queue.pop_front();
 
-        // Get all adjacent vertices of the dequeued
-        // vertex s. If a adjacent has not been visited,
-        // then mark it visited and enqueue it
-        for (i = this->pAdjacencyList[source].begin(); i != this->pAdjacencyList[source].end(); ++i) {
-            if (!visited[*i]) {
-                visited[*i] = true;
-                queue.push_back(*i);
+        if(nodeSource->getAdjacency().size() > 1) {
+            sort(nodeSource->getAdjacency().begin(), nodeSource->getAdjacency().end(), nodeCompare);
+        }
+
+        for(auto adjacency : nodeSource->getAdjacency()) {
+            if(!adjacency->isVisited()) {
+                adjacency->setVisited(true);
+                adjacency->setDistance(nodeSource->getDistance() + 1);
+                adjacency->setPredecessor(nodeSource);
+
+                listNode.push_back(adjacency);
+                queue.push_back(adjacency);
             }
         }
+    }
+
+}
+
+bool Graph::nodeCompare(Node* nodeA, Node* nodeB) {
+    return nodeA->getValue() < nodeB->getValue();
+}
+
+void Graph::deallocateMemory() {
+    for(auto node : this->node) {
+        delete node;
     }
 }
